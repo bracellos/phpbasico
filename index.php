@@ -1,8 +1,3 @@
-<?php
-require_once "funcoes.php";
-$title = "Meu Primeiro site com PHP";
-$mensagem = "Mano que orgulho do meu primeiro site";
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,8 +6,11 @@ $mensagem = "Mano que orgulho do meu primeiro site";
     <title>Document</title>
 </head>
 <body>
-    <h1><?php echo $title?></h1>
-    <p><?php echo $mensagem?></p>
-    <p><?php echo $listaDias?></p>
+    <a href="index.php?page=home">HOME</a>
+    <a href="index.php?page=formulario">CADASTRO</a>
+    
+    <?php 
+    $page = (empty($_GET['page'])) ? 'home' : $_GET['page'];
+    include_once $page.".php"?>
 </body>
 </html>
